@@ -1,0 +1,216 @@
+/* Copyright © 2026 Donato Cipriano. Tutti i diritti riservati. */
+/* Modello B "Aula luminosa", tema chiaro. Nessuna risorsa esterna: i caratteri sono in font/, con le licenze OFL. */
+
+@font-face { font-family: "Nunito"; src: url("font/nunito-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Nunito"; src: url("font/nunito-latin-900-normal.woff2") format("woff2"); font-weight: 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("font/atkinson-hyperlegible-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Atkinson Hyperlegible"; src: url("font/atkinson-hyperlegible-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Playwrite IT Trad"; src: url("font/playwrite-it-trad-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+
+:root {
+  --ink: #1B2440; --ink-hover: #3A4675; --muted: #4A5371;
+  --bianco: #FFFFFF; --fascia: #F2F4F9; --notte: #1B2440; --notte-muted: #C9CFDF; --notte-bordo: #2E3963;
+  --giallo: #FFE14D; --verde: #A6F23B; --azzurro: #5CE1E6; --arancione: #FF9F0A;
+  --titoli: "Nunito", system-ui, sans-serif;
+  --testo: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --corsivo: "Playwrite IT Trad", cursive;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--bianco); color: var(--ink); font: 400 18px/1.5 var(--testo); }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--ink); }
+a:hover { color: var(--ink-hover); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { margin: 0; font-family: var(--titoli); font-weight: 900; }
+p, ul { margin: 0; }
+
+.solo-lettori {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.salta {
+  position: absolute; left: 16px; top: -100px; z-index: 10; padding: 12px 18px; border-radius: 16px;
+  background: var(--ink); color: var(--bianco); font: 900 16px/1.2 var(--titoli); text-decoration: none;
+}
+.salta:focus { top: 16px; color: var(--bianco); }
+
+.wrap { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.titolo-sezione { font-size: 44px; line-height: 1.05; text-align: center; }
+
+/* Pulsanti: il bordo c'è sempre (trasparente sui pieni), così si vede anche con i colori forzati del sistema */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 52px; padding: 12px 26px; border: 2px solid transparent; border-radius: 16px;
+  font: 900 17px/1.2 var(--titoli); letter-spacing: .04em; text-align: center; text-decoration: none;
+}
+.btn-pieno { background: var(--ink); color: var(--bianco); }
+.btn-pieno:hover { background: var(--notte-bordo); color: var(--bianco); }
+.btn-bordo { background: var(--bianco); color: var(--ink); border-color: var(--ink); }
+.btn-bordo:hover { background: var(--fascia); color: var(--ink); }
+
+/* Marchio con la sottolineatura gialla */
+.marchio {
+  padding: 0 4px; color: var(--ink); text-decoration: none; font-family: var(--titoli); font-weight: 900;
+  background: linear-gradient(transparent 60%, var(--giallo) 60%);
+}
+
+/* 1. Testata */
+.testata-riga { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 88px; }
+.testata .marchio { font-size: 30px; }
+.menu { display: flex; align-items: center; gap: 28px; font: 800 17px/1.2 var(--titoli); }
+.menu-voce { padding: 8px 0; text-decoration: none; }
+.menu-voce:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; }
+.menu .btn { min-height: 46px; padding: 8px 22px; font-size: 15px; }
+
+/* 2. Apertura */
+.apertura { padding: 72px 0 64px; text-align: center; }
+.apertura .wrap { display: flex; flex-direction: column; align-items: center; gap: 26px; }
+.etichetta {
+  padding: 8px 18px; border-radius: 999px; background: var(--fascia);
+  font: 900 14px/1.4 var(--titoli); letter-spacing: .14em;
+}
+.apertura h1 { max-width: 980px; font-size: 76px; line-height: 1.02; letter-spacing: -.015em; }
+.corsivo {
+  font-family: var(--corsivo); font-weight: 400; font-style: normal; font-size: .84em; letter-spacing: 0;
+  background: linear-gradient(transparent 62%, var(--giallo) 62%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+.unito { white-space: nowrap; }
+.sottotitolo { max-width: 700px; font-size: 22px; line-height: 1.5; color: var(--muted); }
+.pulsanti { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+.icone-grandi {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; margin-top: 28px; padding: 0; list-style: none;
+}
+.icone-grandi li { display: flex; flex-direction: column; align-items: center; gap: 12px; font: 800 16px/1.25 var(--titoli); }
+.icone-grandi img { width: 150px; height: 150px; border-radius: 22.4%; box-shadow: 0 18px 40px rgba(27, 36, 64, .22); }
+
+/* 3. Per chi sono */
+.per-chi { padding: 72px 0; background: var(--fascia); }
+.per-chi .wrap { display: flex; flex-direction: column; gap: 34px; }
+.griglia-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding: 0; list-style: none; }
+.riquadro { display: flex; flex-direction: column; gap: 10px; padding: 28px; border-radius: 24px; background: var(--bianco); }
+.barretta { width: 48px; height: 8px; border-radius: 4px; }
+.riquadro h3 { font-size: 22px; line-height: 1.2; }
+.riquadro p { font-size: 17px; line-height: 1.5; color: var(--muted); }
+
+/* 4. Le app */
+.app { padding: 88px 0; }
+.app .wrap { display: flex; flex-direction: column; gap: 36px; }
+.griglia-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr)); gap: 24px; }
+.scheda { display: flex; flex-direction: column; gap: 16px; padding: 34px; border-radius: 32px; }
+.scheda img { width: 104px; height: 104px; border-radius: 22.4%; box-shadow: 0 10px 0 rgba(27, 36, 64, .18); }
+.scheda h3 { margin-top: 8px; font-size: 34px; line-height: 1.05; }
+.scheda .sottotitolo-store { font: 800 18px/1.3 var(--titoli); }
+.scheda .frase { font-size: 18px; line-height: 1.55; }
+.scheda .azioni { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: auto; padding-top: 8px; }
+.scheda .scopri { padding: 8px 0; font: 800 16px/1.2 var(--titoli); }
+.scheda .scopri:hover { color: var(--ink); text-decoration-thickness: 2px; }
+.scheda .btn-presto { background: transparent; border-color: var(--ink); color: var(--ink); cursor: default; }
+.sfondo-giallo { background: var(--giallo); }
+.sfondo-verde { background: var(--verde); }
+.sfondo-azzurro { background: var(--azzurro); }
+.sfondo-arancione { background: var(--arancione); }
+
+/* 5. Le promesse */
+.promesse { padding: 80px 0; background: var(--fascia); }
+.griglia-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 24px; padding: 0; list-style: none; text-align: center; }
+.promessa { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.promessa .zero { font: 900 96px/1 var(--titoli); }
+.promessa strong { font: 900 22px/1.2 var(--titoli); }
+.promessa span:last-child { font-size: 17px; color: var(--muted); }
+
+/* 6. Novità */
+.novita { padding: 80px 0; background: var(--notte); color: var(--bianco); }
+.novita .wrap { display: flex; flex-direction: column; gap: 32px; }
+.novita-testa { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+.novita-testa img { width: 84px; height: 84px; border-radius: 22.4%; box-shadow: 0 0 0 2px var(--notte-bordo); }
+.novita-testa div { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.bollino {
+  padding: 5px 12px; border-radius: 999px; background: var(--arancione); color: var(--ink);
+  font: 900 13px/1.3 var(--titoli); letter-spacing: .12em;
+}
+.novita h2 { font-size: 40px; line-height: 1.05; }
+.numeri li { display: flex; flex-direction: column; gap: 4px; font-size: 18px; line-height: 1.4; color: var(--notte-muted); }
+.numeri .numero { font: 900 56px/1.1 var(--titoli); }
+.numero-giallo { color: var(--giallo); }
+.numero-verde { color: var(--verde); }
+.numero-azzurro { color: var(--azzurro); }
+.numero-arancione { color: var(--arancione); }
+
+/* 7. Chi le fa */
+.chi-sono { padding: 88px 0; }
+.chi-sono .wrap { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); align-items: center; gap: 48px; }
+.foto {
+  display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; border-radius: 32px; background: var(--fascia);
+  font: 900 20px/1.2 var(--titoli); letter-spacing: .12em; color: var(--muted);
+}
+.chi-sono-testo { display: flex; flex-direction: column; gap: 18px; }
+.chi-sono-testo h2 { font-size: 44px; line-height: 1.05; }
+.chi-sono-testo p { font-size: 20px; line-height: 1.6; color: var(--muted); }
+.chi-sono-testo .firma { font: 400 26px/1.6 var(--corsivo); color: var(--ink); }
+
+/* 8. Piede */
+.piede { padding: 56px 0 64px; background: var(--fascia); }
+.piede .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.piede .marchio { font-size: 22px; }
+.piede nav { display: flex; flex-wrap: wrap; gap: 4px 26px; font-size: 16px; }
+.piede nav a { padding: 8px 0; }
+.piede small { font-size: 15px; color: var(--muted); }
+
+/* Pagina di testo (privacy) */
+.pagina { padding: 40px 0 80px; }
+.pagina .wrap { max-width: 800px; }
+.pagina .torna { display: inline-block; padding: 8px 0; font: 800 16px/1.2 var(--titoli); }
+.pagina h1 { margin: 20px 0 8px; font-size: 48px; line-height: 1.05; }
+.pagina .data { margin-bottom: 28px; font-size: 16px; color: var(--muted); }
+.pagina h2 { margin: 40px 0 12px; font-size: 28px; line-height: 1.15; }
+.pagina p, .pagina li { font-size: 18px; line-height: 1.6; }
+.pagina p + p { margin-top: 14px; }
+.pagina ul { padding-left: 24px; }
+.pagina li + li { margin-top: 6px; }
+.pagina .in-breve { padding: 18px 22px; border-radius: 16px; background: var(--fascia); border-left: 8px solid var(--giallo); }
+.elenco-app { padding: 0 !important; list-style: none; display: grid; gap: 12px; }
+.elenco-app li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin: 0 !important; padding: 14px 18px; border-radius: 16px; background: var(--fascia); }
+.elenco-app img { width: 48px; height: 48px; border-radius: 22.4%; }
+.elenco-app strong { flex: 1 1 180px; font: 900 19px/1.2 var(--titoli); }
+.elenco-app a { padding: 6px 0; font: 800 16px/1.2 var(--titoli); }
+
+/* Tablet */
+@media (max-width: 999px) {
+  .griglia-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Telefono */
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .menu-voce { display: none; }
+  .testata-riga { min-height: 76px; }
+  .testata .marchio { font-size: 26px; }
+  .apertura { padding: 40px 0 56px; }
+  .apertura .wrap { gap: 22px; }
+  .etichetta { padding: 8px 14px; border-radius: 16px; font-size: 12px; letter-spacing: .1em; }
+  .apertura h1 { font-size: 46px; }
+  .sottotitolo { font-size: 19px; }
+  .icone-grandi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; margin-top: 12px; }
+  .icone-grandi img { width: 120px; height: 120px; }
+  .titolo-sezione, .chi-sono-testo h2 { font-size: 36px; }
+  .per-chi, .promesse, .novita { padding: 56px 0; }
+  .app, .chi-sono { padding: 64px 0; }
+  .griglia-4 { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .riquadro { padding: 24px; }
+  .scheda { padding: 26px 22px; border-radius: 28px; }
+  .scheda h3 { font-size: 30px; }
+  .promessa .zero { font-size: 80px; }
+  .novita h2 { font-size: 32px; }
+  .numeri.griglia-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
+  .numeri li { font-size: 17px; }
+  .numeri .numero { font-size: 40px; }
+  .chi-sono .wrap { gap: 32px; }
+  .chi-sono-testo p { font-size: 19px; }
+  .pagina h1 { font-size: 38px; }
+  .pagina h2 { font-size: 24px; }
+}

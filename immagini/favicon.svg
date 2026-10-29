@@ -1,0 +1,7 @@
+<!-- Copyright © 2026 Donato Cipriano. Tutti i diritti riservati. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect x="1" y="1" width="14" height="14" rx="4" fill="#FFE14D"/>
+  <rect x="17" y="1" width="14" height="14" rx="4" fill="#A6F23B"/>
+  <rect x="1" y="17" width="14" height="14" rx="4" fill="#5CE1E6"/>
+  <rect x="17" y="17" width="14" height="14" rx="4" fill="#FF9F0A"/>
+</svg>
