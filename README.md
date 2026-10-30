@@ -1,5 +1,5 @@
 <!-- Copyright © 2026 Donato Cipriano. Tutti i diritti riservati. -->
-# [NOME] · il sito delle app
+# Cipriano Didattica · il sito delle app
 
 Il sito che presenta le quattro app di Donato Cipriano per la scuola: **Leggo e Scrivo**, **Matematica Amica**, **Geografia Amica** e **Solfeggio e Teoria**.
 
