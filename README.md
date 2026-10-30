@@ -17,6 +17,9 @@ Solo HTML e CSS, senza JavaScript e senza risorse esterne: niente cookie, niente
 | `immagini/icone/` | le icone originali, 1024 × 1024 |
 | `immagini/condivisione.png` | l'immagine che compare quando si condivide il link (1200 × 630) |
 | `immagini/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` | l'icona del sito |
+| `immagini/donato-600.jpg`, `donato-1200.jpg` | la foto di "Chi le fa" |
+| `video/` | il video "Solfeggio e Teoria in numeri" (44 secondi), orizzontale e verticale |
+| `immagini/video/` | le copertine del video |
 
 ## I caratteri
 
@@ -24,4 +27,8 @@ Solo HTML e CSS, senza JavaScript e senza risorse esterne: niente cookie, niente
 - **Atkinson Hyperlegible** (400, 700): licenza `font/OFL-AtkinsonHyperlegible.txt`.
 - **Playwrite IT Trad** (400): licenza `font/OFL-PlaywriteITTrad.txt`.
 
-© 2026 Donato Cipriano. Tutti i diritti riservati (tranne i caratteri, che hanno la loro licenza).
+## Il video
+
+Il pianoforte della musica è il Salamander Grand Piano di Alexander Holm (licenza CC BY 3.0), citato alla fine del video.
+
+© 2026 Donato Cipriano. Tutti i diritti riservati (tranne i caratteri e il suono del pianoforte, che hanno la loro licenza).

@@ -138,6 +138,9 @@ p, ul { margin: 0; }
 .novita h2 { font-size: 40px; line-height: 1.05; }
 .numeri li { display: flex; flex-direction: column; gap: 4px; font-size: 18px; line-height: 1.4; color: var(--notte-muted); }
 .numeri .numero { font: 900 56px/1.1 var(--titoli); }
+.video-numeri video { display: block; width: 100%; height: auto; border-radius: 24px; background: var(--notte); box-shadow: 0 0 0 2px var(--notte-bordo); }
+.video-orizzontale { aspect-ratio: 16 / 9; }
+.video-numeri .video-verticale { display: none; aspect-ratio: 9 / 16; }
 .numero-giallo { color: var(--giallo); }
 .numero-verde { color: var(--verde); }
 .numero-azzurro { color: var(--azzurro); }
@@ -208,6 +211,8 @@ p, ul { margin: 0; }
   .numeri.griglia-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px; }
   .numeri li { font-size: 17px; }
   .numeri .numero { font-size: 40px; }
+  .video-numeri .video-orizzontale { display: none; }
+  .video-numeri .video-verticale { display: block; }
   .chi-sono .wrap { gap: 32px; }
   .chi-sono-testo p { font-size: 19px; }
   .pagina h1 { font-size: 38px; }
