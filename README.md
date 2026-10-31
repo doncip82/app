@@ -10,16 +10,21 @@ Solo HTML e CSS, senza JavaScript e senza risorse esterne: niente cookie, niente
 | File | Che cos'è |
 |---|---|
 | `index.html` | la pagina principale |
+| `elementari/`, `medie/`, `superiori/`, `conservatorio/` | una pagina per scuola, con le app divise per materia |
+| `leggo-e-scrivo/`, `matematica-amica/`, `geografia-amica/`, `solfeggio-e-teoria/` | una pagina per app: in breve, dove si usa, che cosa fa |
 | `privacy.html` | la privacy del sito, con i link al supporto e alla privacy di ogni app |
+| `sitemap.xml`, `robots.txt` | l'elenco delle pagine per i motori di ricerca |
 | `style.css` | lo stile (modello "Aula luminosa", tema chiaro) |
 | `font/` | Nunito, Atkinson Hyperlegible e Playwrite IT Trad, con le loro licenze SIL Open Font License |
-| `immagini/app/` | le icone delle app, a 300 e 450 punti |
+| `immagini/app/` | le icone delle app in WebP, a 300, 450 e 600 punti |
 | `immagini/icone/` | le icone originali, 1024 × 1024 |
 | `immagini/condivisione.png` | l'immagine che compare quando si condivide il link (1200 × 630) |
 | `immagini/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` | l'icona del sito |
-| `immagini/donato-600.jpg`, `donato-1200.jpg` | la foto di "Chi le fa" |
+| `immagini/donato-600.webp`, `donato-1200.webp` | la foto di "Chi le fa" |
 | `video/` | il video "Solfeggio e Teoria in numeri" (44 secondi), orizzontale e verticale |
 | `immagini/video/` | le copertine del video |
+
+Le pagine delle scuole e delle app, i pezzi che si ripetono in `index.html` e `privacy.html` (tra i segni `inizio:` e `fine:`) e `sitemap.xml` si costruiscono da un elenco unico delle app e delle scuole: un'app nuova si aggiunge una volta sola e compare in tutte le pagine giuste. Quelle parti non si cambiano a mano.
 
 ## I caratteri
 

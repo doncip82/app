@@ -1,5 +1,6 @@
 <!doctype html>
 <!-- Copyright © 2026 Donato Cipriano. Tutti i diritti riservati. -->
+<!-- I pezzi tra i segni "inizio:" e "fine:" li scrive strumenti/costruisci.mjs: si cambiano lì, poi si rifà il sito -->
 <html lang="it">
 <head>
 <meta charset="utf-8">
@@ -8,6 +9,7 @@
 <meta name="description" content="Questo sito non raccoglie dati personali: niente cookie, niente statistiche, niente risorse di altri siti. Qui trovi anche il supporto e la privacy di ogni app.">
 <meta name="author" content="Donato Cipriano">
 <meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://doncip82.github.io/app/privacy.html">
 <link rel="icon" href="immagini/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="immagini/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="immagini/apple-touch-icon.png">
@@ -16,23 +18,25 @@
 <body>
 <a class="salta" href="#contenuto">Salta al contenuto</a>
 
+<!-- inizio:testata -->
 <header class="testata">
   <div class="wrap testata-riga">
-    <a class="marchio" href="./">Cipriano Didattica</a>
+    <a class="marchio" href="./"><span>Cipriano Didattica</span></a>
     <nav class="menu" aria-label="Menu principale">
+      <a class="menu-voce" href="./#scuole">Scuole</a>
       <a class="menu-voce" href="./#app">Le app</a>
-      <a class="menu-voce" href="./#chi">Per chi</a>
       <a class="menu-voce" href="./#io">Chi sono</a>
       <a class="btn btn-pieno" href="#contatti">CONTATTI</a>
     </nav>
   </div>
 </header>
+<!-- fine:testata -->
 
 <main id="contenuto" class="pagina">
   <div class="wrap">
     <a class="torna" href="./">← Torna al sito</a>
     <h1>Privacy del sito</h1>
-    <p class="data">Ultimo aggiornamento: 29 ottobre 2026</p>
+    <p class="data">Ultimo aggiornamento: 31 ottobre 2026</p>
 
     <p class="in-breve"><strong>In breve:</strong> questo sito non raccoglie dati personali. Ognuna delle app ha la sua informativa, che trovi in fondo alla pagina.</p>
 
@@ -50,31 +54,31 @@
     <p>Per saperne di più (pagine in inglese): <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">che cosa registra GitHub Pages</a> e l'<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">informativa sulla privacy di GitHub</a>.</p>
 
     <h2>I link verso altri siti</h2>
-    <p>I pulsanti per scaricare le app portano all'App Store di Apple; "Scopri di più" porta al sito di supporto di ogni app. Lì valgono le regole sulla privacy di quei siti.</p>
+    <p>I pulsanti per scaricare le app portano all'App Store di Apple; dalla pagina di ogni app si arriva anche al suo sito di supporto. Lì valgono le regole sulla privacy di quei siti.</p>
 
     <h2 id="supporto">Le app: supporto e privacy</h2>
     <p>Ogni app ha un sito con le domande frequenti e la sua informativa sulla privacy. Nessuna delle app raccoglie dati personali.</p>
     <ul class="elenco-app">
       <li>
-        <img src="immagini/app/leggo-e-scrivo-300.png" width="48" height="48" alt="">
+        <img src="immagini/app/leggo-e-scrivo-300.webp" width="48" height="48" alt="">
         <strong>Leggo e Scrivo</strong>
         <a href="https://doncip82.github.io/leggo-e-scrivo/">Supporto<span class="solo-lettori"> di Leggo e Scrivo</span></a>
         <a href="https://doncip82.github.io/leggo-e-scrivo/privacy.html">Privacy<span class="solo-lettori"> di Leggo e Scrivo</span></a>
       </li>
       <li>
-        <img src="immagini/app/matematica-amica-300.png" width="48" height="48" alt="">
+        <img src="immagini/app/matematica-amica-300.webp" width="48" height="48" alt="">
         <strong>Matematica Amica</strong>
         <a href="https://doncip82.github.io/leggo-e-scrivo/matematica-amica/">Supporto<span class="solo-lettori"> di Matematica Amica</span></a>
         <a href="https://doncip82.github.io/leggo-e-scrivo/matematica-amica/privacy.html">Privacy<span class="solo-lettori"> di Matematica Amica</span></a>
       </li>
       <li>
-        <img src="immagini/app/geografia-amica-300.png" width="48" height="48" alt="">
+        <img src="immagini/app/geografia-amica-300.webp" width="48" height="48" alt="">
         <strong>Geografia Amica</strong>
         <a href="https://doncip82.github.io/geografia-amica/">Supporto<span class="solo-lettori"> di Geografia Amica</span></a>
         <a href="https://doncip82.github.io/geografia-amica/privacy.html">Privacy<span class="solo-lettori"> di Geografia Amica</span></a>
       </li>
       <li>
-        <img src="immagini/app/solfeggio-e-teoria-300.png" width="48" height="48" alt="">
+        <img src="immagini/app/solfeggio-e-teoria-300.webp" width="48" height="48" alt="">
         <strong>Solfeggio e Teoria</strong>
         <a href="https://doncip82.github.io/solfeggio-e-teoria/">Supporto<span class="solo-lettori"> di Solfeggio e Teoria</span></a>
         <a href="https://doncip82.github.io/solfeggio-e-teoria/privacy.html">Privacy<span class="solo-lettori"> di Solfeggio e Teoria</span></a>
@@ -89,16 +93,44 @@
   </div>
 </main>
 
+<!-- inizio:piede -->
 <footer id="contatti" class="piede">
   <div class="wrap">
-    <a class="marchio" href="./">Cipriano Didattica</a>
-    <nav aria-label="Informazioni">
-      <a href="privacy.html">Privacy</a>
-      <a href="#supporto">Supporto</a>
-      <a href="mailto:donatocipriano@gmail.com">donatocipriano@gmail.com</a>
-    </nav>
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="./"><span>Cipriano Didattica</span></a>
+        <p>App per la scuola, fatte da chi insegna. Senza pubblicità, senza account e senza raccogliere dati.</p>
+      </div>
+      <nav aria-labelledby="piede-scuole">
+        <h2 id="piede-scuole">Scuole</h2>
+        <ul>
+          <li><a href="elementari/">Elementari</a></li>
+          <li><a href="medie/">Medie</a></li>
+          <li><a href="superiori/">Superiori</a></li>
+          <li><a href="conservatorio/">Conservatorio</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="piede-app">
+        <h2 id="piede-app">App</h2>
+        <ul>
+          <li><a href="leggo-e-scrivo/">Leggo e Scrivo</a></li>
+          <li><a href="matematica-amica/">Matematica Amica</a></li>
+          <li><a href="geografia-amica/">Geografia Amica</a></li>
+          <li><a href="solfeggio-e-teoria/">Solfeggio e Teoria</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contatti</h2>
+        <ul>
+          <li><a href="mailto:donatocipriano@gmail.com">donatocipriano@gmail.com</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="privacy.html#supporto">Supporto</a></li>
+        </ul>
+      </div>
+    </div>
     <small>© 2026 Donato Cipriano</small>
   </div>
 </footer>
+<!-- fine:piede -->
 </body>
 </html>

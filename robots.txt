@@ -1,0 +1,7 @@
+# Copyright © 2026 Donato Cipriano. Tutti i diritti riservati.
+# Il sito è aperto a tutti i motori di ricerca e agli assistenti con l'intelligenza artificiale.
+# Vale quando il sito avrà un dominio suo: i motori leggono robots.txt solo nella radice del dominio.
+User-agent: *
+Allow: /
+
+Sitemap: https://doncip82.github.io/app/sitemap.xml

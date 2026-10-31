@@ -9,7 +9,7 @@
 
 :root {
   --ink: #1B2440; --ink-hover: #3A4675; --muted: #4A5371;
-  --bianco: #FFFFFF; --fascia: #F2F4F9; --notte: #1B2440; --notte-muted: #C9CFDF; --notte-bordo: #2E3963;
+  --bianco: #FFFFFF; --fascia: #F2F4F9; --fascia-scura: #E6EAF3; --notte: #1B2440; --notte-muted: #C9CFDF; --notte-bordo: #2E3963;
   --giallo: #FFE14D; --verde: #A6F23B; --azzurro: #5CE1E6; --arancione: #FF9F0A;
   --titoli: "Nunito", system-ui, sans-serif;
   --testo: "Atkinson Hyperlegible", system-ui, sans-serif;
@@ -52,10 +52,12 @@ p, ul { margin: 0; }
 .btn-bordo { background: var(--bianco); color: var(--ink); border-color: var(--ink); }
 .btn-bordo:hover { background: var(--fascia); color: var(--ink); }
 
-/* Marchio con la sottolineatura gialla */
-.marchio {
-  padding: 0 4px; color: var(--ink); text-decoration: none; font-family: var(--titoli); font-weight: 900;
-  background: linear-gradient(transparent 60%, var(--giallo) 60%);
+/* Marchio con la sottolineatura gialla: sullo span, così sul telefono, su due righe, è sotto tutte e due */
+.marchio { color: var(--ink); text-decoration: none; font-family: var(--titoli); font-weight: 900; }
+.marchio:hover { color: var(--ink); }
+.marchio span {
+  padding: 0 4px; background: linear-gradient(transparent 60%, var(--giallo) 60%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
 }
 
 /* 1. Testata */
@@ -108,10 +110,13 @@ p, ul { margin: 0; }
 .scheda h3 { margin-top: 8px; font-size: 34px; line-height: 1.05; }
 .scheda .sottotitolo-store { font: 800 18px/1.3 var(--titoli); }
 .scheda .frase { font-size: 18px; line-height: 1.55; }
-.scheda .azioni { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; margin-top: auto; padding-top: 8px; }
-.scheda .scopri { padding: 8px 0; font: 800 16px/1.2 var(--titoli); }
-.scheda .scopri:hover { color: var(--ink); text-decoration-thickness: 2px; }
-.scheda .btn-presto { background: transparent; border-color: var(--ink); color: var(--ink); cursor: default; }
+.azioni { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+.scheda .azioni { margin-top: auto; padding-top: 8px; }
+.scopri { padding: 8px 0; font: 800 16px/1.2 var(--titoli); }
+.scopri:hover { color: var(--ink); text-decoration-thickness: 2px; }
+.btn-presto { background: transparent; border-color: var(--ink); color: var(--ink); cursor: default; }
+.scheda h3 a { color: inherit; text-decoration: none; }
+.scheda h3 a:hover { color: inherit; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
 .sfondo-giallo { background: var(--giallo); }
 .sfondo-verde { background: var(--verde); }
 .sfondo-azzurro { background: var(--azzurro); }
@@ -156,12 +161,114 @@ p, ul { margin: 0; }
 .chi-sono-testo .firma { font: 400 26px/1.6 var(--corsivo); color: var(--ink); }
 
 /* 8. Piede */
-.piede { padding: 56px 0 64px; background: var(--fascia); }
-.piede .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+.piede { padding: 64px 0 56px; background: var(--fascia); }
+.piede .wrap { display: flex; flex-direction: column; gap: 40px; }
+.piede-griglia { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr)) minmax(0, 1.3fr); gap: 32px; }
+.piede-marchio { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.piede-marchio p { max-width: 300px; font-size: 16px; line-height: 1.5; color: var(--muted); }
 .piede .marchio { font-size: 22px; }
-.piede nav { display: flex; flex-wrap: wrap; gap: 4px 26px; font-size: 16px; }
-.piede nav a { padding: 8px 0; }
+.piede h2 { margin-bottom: 8px; font-size: 14px; line-height: 1.3; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.piede ul { padding: 0; list-style: none; font-size: 16px; }
+.piede li a { display: inline-block; padding: 7px 0; overflow-wrap: anywhere; }
 .piede small { font-size: 15px; color: var(--muted); }
+
+/* Sezioni delle pagine nuove */
+.sezione { padding: 80px 0; }
+.sezione > .wrap { display: flex; flex-direction: column; gap: 34px; }
+.sottotitolo-sezione { margin-top: -18px; text-align: center; font-size: 19px; line-height: 1.5; color: var(--muted); }
+.freccia { flex: none; }
+
+/* Le scuole: una porta per scuola */
+.scuole { padding: 24px 0 88px; }
+.scuole .wrap { display: flex; flex-direction: column; gap: 34px; }
+.porte { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 20px; padding: 0; list-style: none; }
+.porta, .luogo, .app-piccola { height: 100%; border-radius: 24px; background: var(--fascia); color: var(--ink); text-decoration: none; }
+.porta:hover, .luogo:hover, .app-piccola:hover { background: var(--fascia-scura); color: var(--ink); }
+.porta { display: flex; flex-direction: column; gap: 4px; padding: 26px 26px 22px; }
+.porta-nome, .luogo-nome { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 900 30px/1.15 var(--titoli); }
+.porta-ufficiale, .luogo-ufficiale { font-size: 16px; line-height: 1.4; color: var(--muted); }
+/* Le icone si sovrappongono un poco, come una pila: così anche quattro stanno su una riga */
+.porta-icone { display: flex; align-items: center; margin-top: auto; padding-top: 22px; }
+.porta-icone img { width: 44px; height: 44px; border-radius: 22.4%; box-shadow: 0 0 0 3px var(--fascia); }
+.porta-icone img + img { margin-left: -10px; }
+.porta:hover .porta-icone img { box-shadow: 0 0 0 3px var(--fascia-scura); }
+.porta-conta { margin-left: 12px; font: 800 15px/1.2 var(--titoli); color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .porta, .luogo, .app-piccola { transition: transform .15s ease, background-color .15s ease; }
+  .porta:hover, .luogo:hover, .app-piccola:hover { transform: translateY(-3px); }
+}
+
+/* Il percorso in cima alle pagine (Cipriano Didattica › Scuole › Medie) */
+.percorso ol { display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; margin: 0; padding: 4px 0 0; list-style: none; font: 800 15px/1.3 var(--titoli); color: var(--muted); }
+.percorso li { display: flex; align-items: center; gap: 10px; }
+.percorso li + li::before { content: "›"; content: "›" / ""; font-size: 20px; }
+.percorso a { display: inline-block; padding: 10px 0; color: var(--muted); }
+.percorso a:hover { color: var(--ink); }
+.percorso [aria-current] { color: var(--ink); }
+
+/* Pagina di una scuola */
+.testa-pagina { padding: 32px 0 72px; }
+.testa-pagina .wrap { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 56px; }
+.testa-testo { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.testa-pagina h1 { font-size: 64px; line-height: 1.02; letter-spacing: -.015em; }
+.intro { max-width: 680px; font-size: 21px; line-height: 1.55; color: var(--muted); }
+.materie-link { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; list-style: none; }
+.materie-link a { display: inline-flex; align-items: center; min-height: 46px; padding: 0 20px; border: 2px solid var(--ink); border-radius: 999px; font: 800 16px/1.2 var(--titoli); text-decoration: none; }
+.materie-link a:hover { background: var(--fascia); color: var(--ink); }
+.mosaico { display: grid; grid-template-columns: repeat(2, 120px); gap: 22px; padding-right: 8px; }
+.mosaico img { width: 120px; height: 120px; border-radius: 22.4%; box-shadow: 0 14px 32px rgba(27, 36, 64, .2); }
+.mosaico img:nth-child(odd) { transform: rotate(-4deg); }
+.mosaico img:nth-child(even) { transform: rotate(4deg) translateY(18px); }
+.mosaico-1 { grid-template-columns: 160px; }
+.mosaico-1 img { width: 160px; height: 160px; transform: rotate(-4deg); }
+.mosaico-3 img:nth-child(3) { grid-column: 1 / -1; justify-self: center; }
+.materie { padding: 0 0 88px; }
+.materie .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 48px 24px; }
+.materia { display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 24px; }
+.materia > h2 { font-size: 32px; line-height: 1.1; }
+.materia .scheda { flex: 1 1 auto; }
+.materia .frase { max-width: 760px; }
+/* Quando una materia avrà più app, prende tutta la riga */
+.materia:has(.scheda + .scheda) { grid-column: 1 / -1; }
+.scheda-testa { display: flex; align-items: center; gap: 18px; }
+.scheda .scheda-testa img { width: 88px; height: 88px; flex: none; }
+.scheda-testa h3 { margin-top: 0; font-size: 30px; }
+.scheda-testa .sottotitolo-store { margin-top: 4px; }
+.approfondimento { padding-top: 0; }
+.spunte { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 16px 24px; padding: 0; list-style: none; }
+.spunte li { position: relative; padding: 20px 24px 20px 66px; border-radius: 20px; background: var(--fascia); font-size: 18px; line-height: 1.5; }
+.spunte li::before {
+  content: ""; position: absolute; left: 24px; top: 22px; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 16px no-repeat;
+}
+.altre-scuole { padding-top: 0; }
+
+/* Pagina di un'app */
+.eroe { padding: 16px 0 24px; }
+.eroe-scheda { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 56px; padding: 56px; border-radius: 32px; }
+.eroe-testo { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.eroe h1 { font-size: 64px; line-height: 1.02; letter-spacing: -.015em; }
+.eroe .sottotitolo-store { font: 800 22px/1.3 var(--titoli); }
+.eroe-frase { max-width: 660px; font-size: 20px; line-height: 1.6; }
+.eroe .azioni { padding-top: 8px; }
+.eroe-icona { width: 240px; height: 240px; border-radius: 22.4%; box-shadow: 0 16px 0 rgba(27, 36, 64, .18); }
+.domande { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.domanda { display: flex; flex-direction: column; gap: 8px; padding: 26px 28px; border-radius: 24px; background: var(--fascia); }
+.domanda h3 { font-size: 22px; line-height: 1.2; }
+.domanda p { font-size: 18px; line-height: 1.55; color: var(--muted); }
+.in-breve, .dove { padding-bottom: 0; }
+.luoghi { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; padding: 0; list-style: none; }
+.luogo { display: flex; flex-direction: column; gap: 4px; padding: 24px 26px 26px; }
+.luogo-frase { margin-top: 10px; font-size: 17px; line-height: 1.5; }
+.nota-dove { text-align: center; font-size: 18px; color: var(--muted); }
+.funzioni { margin-top: 80px; background: var(--fascia); }
+.griglia-funzioni { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.riquadro ul { display: grid; gap: 8px; padding-left: 20px; font-size: 17px; line-height: 1.5; color: var(--muted); }
+.app-piccole { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; padding: 0; list-style: none; }
+.app-piccola { display: flex; align-items: center; gap: 16px; padding: 18px 20px; }
+.app-piccola img { width: 64px; height: 64px; flex: none; border-radius: 22.4%; }
+.app-piccola strong { display: block; font: 900 21px/1.15 var(--titoli); }
+.app-piccola strong + span { display: block; margin-top: 2px; font: 800 15px/1.3 var(--titoli); color: var(--muted); }
 
 /* Pagina di testo (privacy) */
 .pagina { padding: 40px 0 80px; }
@@ -184,6 +291,15 @@ p, ul { margin: 0; }
 /* Tablet */
 @media (max-width: 999px) {
   .griglia-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .piede-griglia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .griglia-funzioni { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .testa-pagina h1, .eroe h1 { font-size: 52px; }
+  .eroe-scheda { gap: 36px; padding: 44px; }
+  .eroe-icona { width: 180px; height: 180px; }
+  .mosaico { grid-template-columns: repeat(2, 96px); gap: 18px; }
+  .mosaico img { width: 96px; height: 96px; }
+  .mosaico-1 { grid-template-columns: 128px; }
+  .mosaico-1 img { width: 128px; height: 128px; }
 }
 
 /* Telefono */
@@ -191,7 +307,7 @@ p, ul { margin: 0; }
   .wrap { padding: 0 16px; }
   .menu-voce { display: none; }
   .testata-riga { min-height: 76px; }
-  .testata .marchio { font-size: 26px; }
+  .testata .marchio { font-size: 26px; line-height: 1.2; }
   .apertura { padding: 40px 0 56px; }
   .apertura .wrap { gap: 22px; }
   .etichetta { padding: 8px 14px; border-radius: 16px; font-size: 12px; letter-spacing: .1em; }
@@ -217,4 +333,42 @@ p, ul { margin: 0; }
   .chi-sono-testo p { font-size: 19px; }
   .pagina h1 { font-size: 38px; }
   .pagina h2 { font-size: 24px; }
+  .sezione { padding: 56px 0; }
+  .sezione > .wrap, .scuole .wrap { gap: 26px; }
+  .sottotitolo-sezione { margin-top: -12px; font-size: 17px; }
+  .scuole { padding: 8px 0 64px; }
+  .porta { padding: 22px 22px 20px; }
+  .porta-nome, .luogo-nome { font-size: 26px; }
+  .piede { padding: 48px 0 44px; }
+  .piede .wrap { gap: 32px; }
+  .piede-griglia { gap: 28px 20px; }
+  .piede-marchio, .piede-griglia > div:last-child { grid-column: 1 / -1; }
+  .testa-pagina { padding: 16px 0 48px; }
+  .testa-pagina .wrap { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .testa-pagina h1, .eroe h1 { font-size: 40px; line-height: 1.05; }
+  .testa-testo { gap: 16px; }
+  .intro { font-size: 18px; }
+  .mosaico, .mosaico-1 { display: flex; flex-wrap: wrap; gap: 12px; order: -1; padding: 0; }
+  .mosaico img, .mosaico-1 img { width: 64px; height: 64px; transform: none; box-shadow: 0 8px 20px rgba(27, 36, 64, .18); }
+  .mosaico img:nth-child(even) { transform: none; }
+  .materie { padding-bottom: 56px; }
+  .materie .wrap { gap: 36px; }
+  .materia > h2 { font-size: 28px; }
+  .scheda-testa { gap: 14px; }
+  .scheda .scheda-testa img { width: 64px; height: 64px; }
+  .scheda-testa h3 { font-size: 24px; }
+  .scheda-testa .sottotitolo-store { font-size: 15px; }
+  .spunte li { padding: 18px 18px 18px 58px; font-size: 17px; }
+  .spunte li::before { left: 18px; top: 20px; }
+  .eroe { padding: 8px 0 8px; }
+  .eroe-scheda { grid-template-columns: minmax(0, 1fr); gap: 18px; padding: 26px 22px; border-radius: 28px; }
+  .eroe-icona { order: -1; width: 96px; height: 96px; box-shadow: 0 10px 0 rgba(27, 36, 64, .18); }
+  .eroe .sottotitolo-store { font-size: 18px; }
+  .eroe-frase { font-size: 17px; line-height: 1.55; }
+  .domande, .griglia-funzioni { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .domanda { padding: 22px 22px; }
+  .domanda h3 { font-size: 20px; }
+  .domanda p { font-size: 17px; }
+  .funzioni { margin-top: 56px; }
+  .luogo { padding: 22px 22px; }
 }

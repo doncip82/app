@@ -1,18 +1,21 @@
 <!doctype html>
 <!-- Copyright © 2026 Donato Cipriano. Tutti i diritti riservati. -->
+<!-- I pezzi tra i segni "inizio:" e "fine:" li scrive strumenti/costruisci.mjs: si cambiano lì, poi si rifà il sito -->
 <html lang="it">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cipriano Didattica · App per la scuola, fatte da chi insegna</title>
-<meta name="description" content="Leggo e Scrivo, Matematica Amica, Geografia Amica e Solfeggio e Teoria: quattro app per la scuola, fatte da un insegnante. Senza pubblicità, senza account e senza raccogliere dati.">
+<meta name="description" content="Leggo e Scrivo, Matematica Amica, Geografia Amica e Solfeggio e Teoria: app per la scuola primaria, le medie, le superiori e il conservatorio, fatte da un insegnante. Senza pubblicità, senza account e senza raccogliere dati.">
 <meta name="author" content="Donato Cipriano">
 <meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://doncip82.github.io/app/">
 <link rel="icon" href="immagini/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="immagini/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="immagini/apple-touch-icon.png">
-<!-- Condivisione sui social. Con il dominio, cambiare og:url e og:image -->
+<!-- Condivisione sui social. Con il dominio, cambiare og:url, og:image e canonical -->
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Cipriano Didattica">
 <meta property="og:url" content="https://doncip82.github.io/app/">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="App per la scuola, fatte da chi insegna">
@@ -25,22 +28,27 @@
 <link rel="preload" href="font/nunito-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="font/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
+<!-- inizio:dati -->
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://doncip82.github.io/app/#sito","name":"Cipriano Didattica","url":"https://doncip82.github.io/app/","inLanguage":"it","description":"App per la scuola, fatte da chi insegna: senza pubblicità, senza account e senza raccogliere dati.","publisher":{"@id":"https://doncip82.github.io/app/#donato"}},{"@type":"Person","@id":"https://doncip82.github.io/app/#donato","name":"Donato Cipriano","jobTitle":"Insegnante di sostegno","url":"https://doncip82.github.io/app/#io"},{"@type":"ItemList","name":"Le app","itemListElement":[{"@type":"ListItem","position":1,"url":"https://doncip82.github.io/app/leggo-e-scrivo/","name":"Leggo e Scrivo"},{"@type":"ListItem","position":2,"url":"https://doncip82.github.io/app/matematica-amica/","name":"Matematica Amica"},{"@type":"ListItem","position":3,"url":"https://doncip82.github.io/app/geografia-amica/","name":"Geografia Amica"},{"@type":"ListItem","position":4,"url":"https://doncip82.github.io/app/solfeggio-e-teoria/","name":"Solfeggio e Teoria"}]}]}</script>
+<!-- fine:dati -->
 </head>
 <body>
 <a class="salta" href="#contenuto">Salta al contenuto</a>
 
 <!-- 1. Testata -->
+<!-- inizio:testata -->
 <header class="testata">
   <div class="wrap testata-riga">
-    <a class="marchio" href="./">Cipriano Didattica</a>
+    <a class="marchio" href="./"><span>Cipriano Didattica</span></a>
     <nav class="menu" aria-label="Menu principale">
+      <a class="menu-voce" href="#scuole">Scuole</a>
       <a class="menu-voce" href="#app">Le app</a>
-      <a class="menu-voce" href="#chi">Per chi</a>
       <a class="menu-voce" href="#io">Chi sono</a>
       <a class="btn btn-pieno" href="#contatti">CONTATTI</a>
     </nav>
   </div>
 </header>
+<!-- fine:testata -->
 
 <main id="contenuto">
 
@@ -55,15 +63,55 @@
         <a class="btn btn-bordo" href="#contatti">PER LE SCUOLE</a>
       </div>
       <ul class="icone-grandi">
-        <li><img src="immagini/app/leggo-e-scrivo-300.png" srcset="immagini/app/leggo-e-scrivo-300.png 2x, immagini/app/leggo-e-scrivo-450.png 3x" width="150" height="150" alt=""> Leggo e Scrivo</li>
-        <li><img src="immagini/app/matematica-amica-300.png" srcset="immagini/app/matematica-amica-300.png 2x, immagini/app/matematica-amica-450.png 3x" width="150" height="150" alt=""> Matematica Amica</li>
-        <li><img src="immagini/app/geografia-amica-300.png" srcset="immagini/app/geografia-amica-300.png 2x, immagini/app/geografia-amica-450.png 3x" width="150" height="150" alt=""> Geografia Amica</li>
-        <li><img src="immagini/app/solfeggio-e-teoria-300.png" srcset="immagini/app/solfeggio-e-teoria-300.png 2x, immagini/app/solfeggio-e-teoria-450.png 3x" width="150" height="150" alt=""> Solfeggio e Teoria</li>
+        <li><img src="immagini/app/leggo-e-scrivo-300.webp" srcset="immagini/app/leggo-e-scrivo-300.webp 300w, immagini/app/leggo-e-scrivo-450.webp 450w" sizes="(max-width: 640px) 120px, 150px" width="150" height="150" alt="" fetchpriority="high"> Leggo e Scrivo</li>
+        <li><img src="immagini/app/matematica-amica-300.webp" srcset="immagini/app/matematica-amica-300.webp 300w, immagini/app/matematica-amica-450.webp 450w" sizes="(max-width: 640px) 120px, 150px" width="150" height="150" alt="" fetchpriority="high"> Matematica Amica</li>
+        <li><img src="immagini/app/geografia-amica-300.webp" srcset="immagini/app/geografia-amica-300.webp 300w, immagini/app/geografia-amica-450.webp 450w" sizes="(max-width: 640px) 120px, 150px" width="150" height="150" alt="" fetchpriority="high"> Geografia Amica</li>
+        <li><img src="immagini/app/solfeggio-e-teoria-300.webp" srcset="immagini/app/solfeggio-e-teoria-300.webp 300w, immagini/app/solfeggio-e-teoria-450.webp 450w" sizes="(max-width: 640px) 120px, 150px" width="150" height="150" alt="" fetchpriority="high"> Solfeggio e Teoria</li>
       </ul>
     </div>
   </section>
 
-  <!-- 3. Per chi sono -->
+  <!-- 3. Le scuole: una pagina per scuola, con le app divise per materia -->
+  <section id="scuole" class="scuole" aria-labelledby="titolo-scuole">
+    <div class="wrap">
+      <h2 id="titolo-scuole" class="titolo-sezione">Per quale scuola?</h2>
+      <p class="sottotitolo-sezione">In ogni scuola trovi le app divise per materia.</p>
+      <!-- inizio:porte -->
+      <ul class="porte">
+        <li>
+          <a class="porta" href="elementari/">
+            <span class="porta-nome">Elementari<svg class="freccia" aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+            <span class="porta-ufficiale">Scuola primaria</span>
+            <span class="porta-icone"><img src="immagini/app/leggo-e-scrivo-300.webp" srcset="immagini/app/leggo-e-scrivo-300.webp 300w, immagini/app/leggo-e-scrivo-450.webp 450w, immagini/app/leggo-e-scrivo-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><img src="immagini/app/matematica-amica-300.webp" srcset="immagini/app/matematica-amica-300.webp 300w, immagini/app/matematica-amica-450.webp 450w, immagini/app/matematica-amica-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><img src="immagini/app/geografia-amica-300.webp" srcset="immagini/app/geografia-amica-300.webp 300w, immagini/app/geografia-amica-450.webp 450w, immagini/app/geografia-amica-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><span class="porta-conta">3 app<span class="solo-lettori">: Leggo e Scrivo, Matematica Amica, Geografia Amica</span></span></span>
+          </a>
+        </li>
+        <li>
+          <a class="porta" href="medie/">
+            <span class="porta-nome">Medie<svg class="freccia" aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+            <span class="porta-ufficiale">Scuola secondaria di primo grado</span>
+            <span class="porta-icone"><img src="immagini/app/leggo-e-scrivo-300.webp" srcset="immagini/app/leggo-e-scrivo-300.webp 300w, immagini/app/leggo-e-scrivo-450.webp 450w, immagini/app/leggo-e-scrivo-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><img src="immagini/app/matematica-amica-300.webp" srcset="immagini/app/matematica-amica-300.webp 300w, immagini/app/matematica-amica-450.webp 450w, immagini/app/matematica-amica-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><img src="immagini/app/geografia-amica-300.webp" srcset="immagini/app/geografia-amica-300.webp 300w, immagini/app/geografia-amica-450.webp 450w, immagini/app/geografia-amica-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><img src="immagini/app/solfeggio-e-teoria-300.webp" srcset="immagini/app/solfeggio-e-teoria-300.webp 300w, immagini/app/solfeggio-e-teoria-450.webp 450w, immagini/app/solfeggio-e-teoria-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><span class="porta-conta">4 app<span class="solo-lettori">: Leggo e Scrivo, Matematica Amica, Geografia Amica, Solfeggio e Teoria</span></span></span>
+          </a>
+        </li>
+        <li>
+          <a class="porta" href="superiori/">
+            <span class="porta-nome">Superiori<svg class="freccia" aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+            <span class="porta-ufficiale">Scuola secondaria di secondo grado</span>
+            <span class="porta-icone"><img src="immagini/app/leggo-e-scrivo-300.webp" srcset="immagini/app/leggo-e-scrivo-300.webp 300w, immagini/app/leggo-e-scrivo-450.webp 450w, immagini/app/leggo-e-scrivo-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><img src="immagini/app/solfeggio-e-teoria-300.webp" srcset="immagini/app/solfeggio-e-teoria-300.webp 300w, immagini/app/solfeggio-e-teoria-450.webp 450w, immagini/app/solfeggio-e-teoria-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><span class="porta-conta">2 app<span class="solo-lettori">: Leggo e Scrivo, Solfeggio e Teoria</span></span></span>
+          </a>
+        </li>
+        <li>
+          <a class="porta" href="conservatorio/">
+            <span class="porta-nome">Conservatorio<svg class="freccia" aria-hidden="true" focusable="false" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></span>
+            <span class="porta-ufficiale">Preparazione all'ammissione</span>
+            <span class="porta-icone"><img src="immagini/app/solfeggio-e-teoria-300.webp" srcset="immagini/app/solfeggio-e-teoria-300.webp 300w, immagini/app/solfeggio-e-teoria-450.webp 450w, immagini/app/solfeggio-e-teoria-600.webp 600w" sizes="44px" width="44" height="44" alt="" decoding="async"><span class="porta-conta">1 app<span class="solo-lettori">: Solfeggio e Teoria</span></span></span>
+          </a>
+        </li>
+      </ul>
+      <!-- fine:porte -->
+    </div>
+  </section>
+
+  <!-- 4. Per chi sono -->
   <section id="chi" class="per-chi">
     <div class="wrap">
       <h2 class="titolo-sezione">Per chi sono</h2>
@@ -92,57 +140,58 @@
     </div>
   </section>
 
-  <!-- 4. Le app -->
+  <!-- 5. Le app -->
   <section id="app" class="app">
     <div class="wrap">
       <h2 class="titolo-sezione">Le app</h2>
       <div class="griglia-2">
+        <!-- inizio:schede -->
         <article class="scheda sfondo-giallo">
-          <img src="immagini/app/leggo-e-scrivo-300.png" srcset="immagini/app/leggo-e-scrivo-300.png 2x, immagini/app/leggo-e-scrivo-450.png 3x" width="104" height="104" alt="">
-          <h3>Leggo e Scrivo</h3>
+          <img src="immagini/app/leggo-e-scrivo-300.webp" srcset="immagini/app/leggo-e-scrivo-300.webp 300w, immagini/app/leggo-e-scrivo-450.webp 450w, immagini/app/leggo-e-scrivo-600.webp 600w" sizes="104px" width="104" height="104" alt="" decoding="async">
+          <h3><a href="leggo-e-scrivo/">Leggo e Scrivo</a></h3>
           <p class="sottotitolo-store">Sillabe, ricalco e pregrafismo</p>
           <p class="frase">Ricalca le lettere con Apple Pencil, leggi una sillaba alla volta o ascolta il testo intero, allenati con il pregrafismo.</p>
           <div class="azioni">
             <a class="btn btn-pieno" href="https://apps.apple.com/it/app/leggo-e-scrivo/id6816164780">SCARICA GRATIS<span class="solo-lettori"> Leggo e Scrivo dall'App Store</span></a>
-            <a class="scopri" href="https://doncip82.github.io/leggo-e-scrivo/">Scopri di più<span class="solo-lettori"> su Leggo e Scrivo</span></a>
+            <a class="scopri" href="leggo-e-scrivo/">Scopri di più<span class="solo-lettori"> su Leggo e Scrivo</span></a>
           </div>
         </article>
         <article class="scheda sfondo-verde">
-          <img src="immagini/app/matematica-amica-300.png" srcset="immagini/app/matematica-amica-300.png 2x, immagini/app/matematica-amica-450.png 3x" width="104" height="104" alt="">
-          <h3>Matematica Amica</h3>
+          <img src="immagini/app/matematica-amica-300.webp" srcset="immagini/app/matematica-amica-300.webp 300w, immagini/app/matematica-amica-450.webp 450w, immagini/app/matematica-amica-600.webp 600w" sizes="104px" width="104" height="104" alt="" decoding="async">
+          <h3><a href="matematica-amica/">Matematica Amica</a></h3>
           <p class="sottotitolo-store">Conti in colonna passo passo</p>
           <p class="frase">Operazioni in colonna ed espressioni, un piccolo calcolo alla volta, con Apple Pencil o con i tasti.</p>
           <div class="azioni">
             <a class="btn btn-pieno" href="https://apps.apple.com/it/app/matematica-amica/id6817377890">SCARICA GRATIS<span class="solo-lettori"> Matematica Amica dall'App Store</span></a>
-            <a class="scopri" href="https://doncip82.github.io/leggo-e-scrivo/matematica-amica/">Scopri di più<span class="solo-lettori"> su Matematica Amica</span></a>
+            <a class="scopri" href="matematica-amica/">Scopri di più<span class="solo-lettori"> su Matematica Amica</span></a>
           </div>
         </article>
         <article class="scheda sfondo-azzurro">
-          <img src="immagini/app/geografia-amica-300.png" srcset="immagini/app/geografia-amica-300.png 2x, immagini/app/geografia-amica-450.png 3x" width="104" height="104" alt="">
-          <h3>Geografia Amica</h3>
+          <img src="immagini/app/geografia-amica-300.webp" srcset="immagini/app/geografia-amica-300.webp 300w, immagini/app/geografia-amica-450.webp 450w, immagini/app/geografia-amica-600.webp 600w" sizes="104px" width="104" height="104" alt="" decoding="async">
+          <h3><a href="geografia-amica/">Geografia Amica</a></h3>
           <p class="sottotitolo-store">Esplora, trova e scrivi luoghi</p>
           <p class="frase">Regioni, capoluoghi, fiumi, monti, stati d'Europa e continenti su carte vere, fino alla carta muta.</p>
           <div class="azioni">
             <a class="btn btn-pieno" href="https://apps.apple.com/it/app/geografia-amica/id6820412508">SCARICA GRATIS<span class="solo-lettori"> Geografia Amica dall'App Store</span></a>
-            <a class="scopri" href="https://doncip82.github.io/geografia-amica/">Scopri di più<span class="solo-lettori"> su Geografia Amica</span></a>
+            <a class="scopri" href="geografia-amica/">Scopri di più<span class="solo-lettori"> su Geografia Amica</span></a>
           </div>
         </article>
         <article class="scheda sfondo-arancione">
-          <img src="immagini/app/solfeggio-e-teoria-300.png" srcset="immagini/app/solfeggio-e-teoria-300.png 2x, immagini/app/solfeggio-e-teoria-450.png 3x" width="104" height="104" alt="">
-          <h3>Solfeggio e Teoria</h3>
+          <img src="immagini/app/solfeggio-e-teoria-300.webp" srcset="immagini/app/solfeggio-e-teoria-300.webp 300w, immagini/app/solfeggio-e-teoria-450.webp 450w, immagini/app/solfeggio-e-teoria-600.webp 600w" sizes="104px" width="104" height="104" alt="" decoding="async">
+          <h3><a href="solfeggio-e-teoria/">Solfeggio e Teoria</a></h3>
           <p class="sottotitolo-store">Lezioni, ritmo e dettati</p>
           <p class="frase">Novanta lezioni già pronte di teoria e solfeggio, dalla prima nota alle triadi. Il primo anno è gratis.</p>
           <div class="azioni">
-            <!-- Quando l'app è sull'App Store diventa: <a class="btn btn-pieno" href="…">SCARICA</a> -->
             <span class="btn btn-presto">PRESTO SULL'APP STORE</span>
-            <a class="scopri" href="https://doncip82.github.io/solfeggio-e-teoria/">Scopri di più<span class="solo-lettori"> su Solfeggio e Teoria</span></a>
+            <a class="scopri" href="solfeggio-e-teoria/">Scopri di più<span class="solo-lettori"> su Solfeggio e Teoria</span></a>
           </div>
         </article>
+        <!-- fine:schede -->
       </div>
     </div>
   </section>
 
-  <!-- 5. Le promesse -->
+  <!-- 6. Le promesse -->
   <section class="promesse" aria-labelledby="titolo-promesse">
     <div class="wrap">
       <h2 id="titolo-promesse" class="solo-lettori">Le promesse</h2>
@@ -154,11 +203,11 @@
     </div>
   </section>
 
-  <!-- 6. Novità -->
+  <!-- 7. Novità -->
   <section class="novita" aria-labelledby="titolo-novita">
     <div class="wrap">
       <div class="novita-testa">
-        <img src="immagini/app/solfeggio-e-teoria-300.png" width="84" height="84" alt="">
+        <img src="immagini/app/solfeggio-e-teoria-300.webp" width="84" height="84" alt="" loading="lazy" decoding="async">
         <div>
           <span class="bollino">NOVITÀ</span>
           <h2 id="titolo-novita">Solfeggio e Teoria, in numeri</h2>
@@ -172,11 +221,11 @@
       </ul>
       <!-- Due video: orizzontale sugli schermi larghi, verticale sul telefono. preload="none": non si scaricano finché non si toccano -->
       <div class="video-numeri">
-        <video class="video-orizzontale" controls preload="none" playsinline poster="immagini/video/in-numeri-orizzontale.jpg" width="1920" height="1080" aria-label="Video: Solfeggio e Teoria in numeri, 44 secondi, con musica e senza voce">
+        <video class="video-orizzontale" controls preload="none" playsinline poster="immagini/video/in-numeri-orizzontale.webp" width="1920" height="1080" aria-label="Video: Solfeggio e Teoria in numeri, 44 secondi, con musica e senza voce">
           <source src="video/solfeggio-e-teoria-in-numeri-orizzontale.mp4" type="video/mp4">
           <a href="video/solfeggio-e-teoria-in-numeri-orizzontale.mp4">Guarda il video</a>
         </video>
-        <video class="video-verticale" controls preload="none" playsinline poster="immagini/video/in-numeri-verticale.jpg" width="1080" height="1920" aria-label="Video: Solfeggio e Teoria in numeri, 44 secondi, con musica e senza voce">
+        <video class="video-verticale" controls preload="none" playsinline poster="immagini/video/in-numeri-verticale.webp" width="1080" height="1920" aria-label="Video: Solfeggio e Teoria in numeri, 44 secondi, con musica e senza voce">
           <source src="video/solfeggio-e-teoria-in-numeri-verticale.mp4" type="video/mp4">
           <a href="video/solfeggio-e-teoria-in-numeri-verticale.mp4">Guarda il video</a>
         </video>
@@ -184,10 +233,10 @@
     </div>
   </section>
 
-  <!-- 7. Chi le fa -->
+  <!-- 8. Chi le fa -->
   <section id="io" class="chi-sono">
     <div class="wrap griglia-2">
-      <img class="foto" src="immagini/donato-1200.jpg" srcset="immagini/donato-600.jpg 600w, immagini/donato-1200.jpg 1200w" sizes="(max-width: 640px) 100vw, 576px" width="1200" height="900" loading="lazy" alt="Donato sul Tamigi, con il Tower Bridge di Londra alle spalle">
+      <img class="foto" src="immagini/donato-1200.webp" srcset="immagini/donato-600.webp 600w, immagini/donato-1200.webp 1200w" sizes="(max-width: 640px) 100vw, 576px" width="1200" height="900" loading="lazy" decoding="async" alt="Donato sul Tamigi, con il Tower Bridge di Londra alle spalle">
       <div class="chi-sono-testo">
         <h2>Chi le fa</h2>
         <p>Sono Donato, insegnante di sostegno. Ho una laurea in violino e una in didattica della musica, una specializzazione in tecnologia del suono e alcuni master: produzione discografica, linguaggi multimediali, informatica per la didattica.</p>
@@ -199,17 +248,45 @@
 
 </main>
 
-<!-- 8. Piede -->
+<!-- 9. Piede -->
+<!-- inizio:piede -->
 <footer id="contatti" class="piede">
   <div class="wrap">
-    <a class="marchio" href="./">Cipriano Didattica</a>
-    <nav aria-label="Informazioni">
-      <a href="privacy.html">Privacy</a>
-      <a href="privacy.html#supporto">Supporto</a>
-      <a href="mailto:donatocipriano@gmail.com">donatocipriano@gmail.com</a>
-    </nav>
+    <div class="piede-griglia">
+      <div class="piede-marchio">
+        <a class="marchio" href="./"><span>Cipriano Didattica</span></a>
+        <p>App per la scuola, fatte da chi insegna. Senza pubblicità, senza account e senza raccogliere dati.</p>
+      </div>
+      <nav aria-labelledby="piede-scuole">
+        <h2 id="piede-scuole">Scuole</h2>
+        <ul>
+          <li><a href="elementari/">Elementari</a></li>
+          <li><a href="medie/">Medie</a></li>
+          <li><a href="superiori/">Superiori</a></li>
+          <li><a href="conservatorio/">Conservatorio</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="piede-app">
+        <h2 id="piede-app">App</h2>
+        <ul>
+          <li><a href="leggo-e-scrivo/">Leggo e Scrivo</a></li>
+          <li><a href="matematica-amica/">Matematica Amica</a></li>
+          <li><a href="geografia-amica/">Geografia Amica</a></li>
+          <li><a href="solfeggio-e-teoria/">Solfeggio e Teoria</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2>Contatti</h2>
+        <ul>
+          <li><a href="mailto:donatocipriano@gmail.com">donatocipriano@gmail.com</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="privacy.html#supporto">Supporto</a></li>
+        </ul>
+      </div>
+    </div>
     <small>© 2026 Donato Cipriano</small>
   </div>
 </footer>
+<!-- fine:piede -->
 </body>
 </html>
