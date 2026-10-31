@@ -242,6 +242,7 @@ p, ul { margin: 0; }
   background: var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 16px no-repeat;
 }
 .altre-scuole { padding-top: 0; }
+.novita + .altre-scuole { padding-top: 80px; }
 
 /* Pagina di un'app */
 .eroe { padding: 16px 0 24px; }
@@ -339,6 +340,7 @@ p, ul { margin: 0; }
   .pagina h1 { font-size: 38px; }
   .pagina h2 { font-size: 24px; }
   .sezione { padding: 56px 0; }
+  .novita + .altre-scuole { padding-top: 56px; }
   .sezione > .wrap, .scuole .wrap { gap: 26px; }
   .sottotitolo-sezione { margin-top: -12px; font-size: 17px; }
   .scuole { padding: 8px 0 64px; }
