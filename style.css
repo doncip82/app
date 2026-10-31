@@ -182,8 +182,8 @@ p, ul { margin: 0; }
 .scuole { padding: 24px 0 88px; }
 .scuole .wrap { display: flex; flex-direction: column; gap: 34px; }
 .porte { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 20px; padding: 0; list-style: none; }
-.porta, .luogo, .app-piccola { height: 100%; border-radius: 24px; background: var(--fascia); color: var(--ink); text-decoration: none; }
-.porta:hover, .luogo:hover, .app-piccola:hover { background: var(--fascia-scura); color: var(--ink); }
+.porta, .luogo, .app-piccola, .lavoro { height: 100%; border-radius: 24px; background: var(--fascia); color: var(--ink); text-decoration: none; }
+.porta:hover, .luogo:hover, .app-piccola:hover, .lavoro:hover { background: var(--fascia-scura); color: var(--ink); }
 .porta { display: flex; flex-direction: column; gap: 4px; padding: 26px 26px 22px; }
 .porta-nome, .luogo-nome { display: flex; align-items: center; justify-content: space-between; gap: 12px; font: 900 30px/1.15 var(--titoli); }
 .porta-ufficiale, .luogo-ufficiale { font-size: 16px; line-height: 1.4; color: var(--muted); }
@@ -194,8 +194,8 @@ p, ul { margin: 0; }
 .porta:hover .porta-icone img { box-shadow: 0 0 0 3px var(--fascia-scura); }
 .porta-conta { margin-left: 12px; font: 800 15px/1.2 var(--titoli); color: var(--muted); }
 @media (prefers-reduced-motion: no-preference) {
-  .porta, .luogo, .app-piccola { transition: transform .15s ease, background-color .15s ease; }
-  .porta:hover, .luogo:hover, .app-piccola:hover { transform: translateY(-3px); }
+  .porta, .luogo, .app-piccola, .lavoro { transition: transform .15s ease, background-color .15s ease; }
+  .porta:hover, .luogo:hover, .app-piccola:hover, .lavoro:hover { transform: translateY(-3px); }
 }
 
 /* Il percorso in cima alle pagine (Cipriano Didattica › Scuole › Medie) */
@@ -275,6 +275,30 @@ p, ul { margin: 0; }
 .app-piccola img { width: 64px; height: 64px; flex: none; border-radius: 22.4%; }
 .app-piccola strong { display: block; font: 900 21px/1.15 var(--titoli); }
 .app-piccola strong + span { display: block; margin-top: 2px; font: 800 15px/1.3 var(--titoli); color: var(--muted); }
+.invito { text-align: center; font-size: 18px; color: var(--muted); }
+.invito a { font-weight: 700; color: var(--ink); }
+
+/* Pagina "Aiutami a migliorare le app" (scrivimi/) */
+.avviso { max-width: 680px; padding: 16px 20px; border-left: 8px solid var(--giallo); border-radius: 16px; background: var(--fascia); font-size: 17px; line-height: 1.5; }
+.sezione.scrivi { padding-top: 0; }
+.modi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding: 0; list-style: none; }
+.modo { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; padding: 32px; border-radius: 32px; }
+.modo h2 { font-size: 28px; line-height: 1.1; }
+.modo .frase { font-size: 18px; line-height: 1.55; }
+.modo-chiede { margin-top: 4px; font: 800 17px/1.3 var(--titoli); }
+.modo ul { display: grid; gap: 4px; padding-left: 22px; list-style: disc; font-size: 17px; line-height: 1.45; }
+.modo p:not([class]) { font-size: 17px; line-height: 1.45; }
+/* Il pulsante in fondo al riquadro, alla stessa altezza in tutti e tre */
+.modo .btn { margin-top: auto; }
+.nota-email { text-align: center; text-wrap: balance; font-size: 18px; line-height: 1.5; color: var(--muted); }
+.nota-email a { overflow-wrap: anywhere; color: var(--ink); }
+.sezione.preparo { padding-top: 0; }
+.lavori { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px; padding: 0; list-style: none; }
+.lavoro { display: flex; align-items: flex-start; gap: 16px; padding: 22px; }
+.lavoro img { width: 64px; height: 64px; flex: none; border-radius: 22.4%; }
+.lavoro > span { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.lavoro strong { font: 900 21px/1.15 var(--titoli); }
+.lavoro-testo { font-size: 17px; line-height: 1.5; color: var(--muted); }
 
 /* Pagina di testo (privacy) */
 .pagina { padding: 40px 0 80px; }
@@ -299,6 +323,7 @@ p, ul { margin: 0; }
   .griglia-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .piede-griglia { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .griglia-funzioni, .arrivo-voci { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .modi { grid-template-columns: minmax(0, 1fr); }
   .testa-pagina h1, .eroe h1 { font-size: 52px; }
   .eroe-scheda { gap: 36px; padding: 44px; }
   .eroe-icona { width: 180px; height: 180px; }
@@ -355,7 +380,8 @@ p, ul { margin: 0; }
   .testa-pagina h1, .eroe h1 { font-size: 40px; line-height: 1.05; }
   .testa-testo { gap: 16px; }
   .intro { font-size: 18px; }
-  .mosaico, .mosaico-1 { display: flex; flex-wrap: wrap; gap: 12px; order: -1; padding: 0; }
+  /* gap 10: quattro icone da 64 stanno in una riga anche a 320 punti */
+  .mosaico, .mosaico-1 { display: flex; flex-wrap: wrap; gap: 10px; order: -1; padding: 0; }
   .mosaico img, .mosaico-1 img { width: 64px; height: 64px; transform: none; box-shadow: 0 8px 20px rgba(27, 36, 64, .18); }
   .mosaico img:nth-child(even) { transform: none; }
   .materie { padding-bottom: 56px; }
@@ -380,4 +406,11 @@ p, ul { margin: 0; }
   .domanda p { font-size: 17px; }
   .funzioni { margin-top: 56px; }
   .luogo { padding: 22px 22px; }
+  .modi { gap: 16px; }
+  .modo { padding: 26px 22px; border-radius: 28px; }
+  .modo h2 { font-size: 24px; }
+  .modo .btn { align-self: stretch; }
+  .avviso, .nota-email, .invito { font-size: 17px; }
+  .lavoro { padding: 20px 18px; }
+  .lavoro img { width: 52px; height: 52px; }
 }
