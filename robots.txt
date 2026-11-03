@@ -3,5 +3,7 @@
 # Vale quando il sito avrà un dominio suo: i motori leggono robots.txt solo nella radice del dominio.
 User-agent: *
 Allow: /
+# le foto dei post di Instagram e Facebook (Instagram le vuole a un indirizzo pubblico): non sono pagine del sito
+Disallow: /social/
 
 Sitemap: https://doncip82.github.io/app/sitemap.xml
