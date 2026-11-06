@@ -21,8 +21,8 @@ Solo HTML e CSS, senza JavaScript e senza risorse esterne: niente cookie, niente
 | `immagini/condivisione.png` | l'immagine che compare quando si condivide il link (1200 × 630) |
 | `immagini/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png` | l'icona del sito |
 | `immagini/donato-600.webp`, `donato-1200.webp` | la foto di "Chi le fa" |
-| `video/` | i video "Solfeggio e Teoria in numeri" (44 secondi) e "Leggo e Scrivo, come funziona" (68 secondi), orizzontali e verticali |
-| `immagini/video/` | le copertine del video |
+| `video/` | i video "Solfeggio e Teoria in numeri" (44 secondi), "Gioca con la classe" (39 secondi, Solfeggio e Teoria) e "Leggo e Scrivo, come funziona" (68 secondi), orizzontali e verticali |
+| `immagini/video/` | le copertine dei video |
 
 Le pagine delle scuole e delle app, i pezzi che si ripetono in `index.html` e `privacy.html` (tra i segni `inizio:` e `fine:`) e `sitemap.xml` si costruiscono da un elenco unico delle app e delle scuole: un'app nuova si aggiunge una volta sola e compare in tutte le pagine giuste. Quelle parti non si cambiano a mano.
 

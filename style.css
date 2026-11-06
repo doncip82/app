@@ -248,6 +248,9 @@ p, ul { margin: 0; }
 }
 .altre-scuole { padding-top: 0; }
 .novita + .altre-scuole { padding-top: 80px; }
+/* Due fasce blu una sotto l'altra (i numeri e il secondo video): una fascia sola, divisa da una riga larga quanto il contenuto */
+.novita + .novita { padding-top: 0; }
+.novita + .novita .novita-testa { padding-top: 72px; border-top: 2px solid var(--notte-bordo); }
 
 /* Pagina di un'app */
 .eroe { padding: 16px 0 24px; }
@@ -371,6 +374,7 @@ p, ul { margin: 0; }
   .pagina h2 { font-size: 24px; }
   .sezione { padding: 56px 0; }
   .novita + .altre-scuole { padding-top: 56px; }
+  .novita + .novita .novita-testa { padding-top: 48px; }
   .sezione > .wrap, .scuole .wrap { gap: 26px; }
   .sottotitolo-sezione { margin-top: -12px; font-size: 17px; }
   .scuole { padding: 8px 0 64px; }
