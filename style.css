@@ -452,3 +452,40 @@ p, ul { margin: 0; }
   .lavoro { padding: 20px 18px; }
   .lavoro img { width: 52px; height: 52px; }
 }
+
+/* La pagina del sostegno (sostegno/), la fascia nella pagina principale e il libro nelle pagine delle app (2026-11-17) */
+.fascia-sostegno { padding: 0 0 56px; }
+.sostegno-invito { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 32px 40px; border-radius: 32px; }
+.sostegno-invito > div { display: flex; flex: 1 1 520px; flex-direction: column; gap: 8px; min-width: 0; }
+.sostegno-invito h2 { font-size: 32px; line-height: 1.1; }
+.sostegno-invito p { max-width: 720px; font-size: 18px; line-height: 1.5; }
+.per-chi .scopri { margin-top: auto; align-self: flex-start; }
+.sostegno-fascia { background: var(--fascia); }
+.domanda-bianca { background: var(--bianco); }
+.scheda-voci { display: grid; gap: 8px; margin: 0; padding-left: 22px; font-size: 17px; line-height: 1.5; }
+.invito-sostegno { grid-column: 1 / -1; }
+.piede-sostegno { display: inline-block; padding: 7px 0; font: 800 16px/1.2 var(--titoli); }
+.disegno + .libro { padding-top: 0; }
+.libro-riquadro { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; width: 100%; max-width: 860px; margin: 0 auto; padding: 32px 36px; border-radius: 24px; background: var(--fascia); }
+.libro-riquadro h2 { font-size: 32px; line-height: 1.1; }
+.libro-riquadro p { font-size: 19px; line-height: 1.55; color: var(--muted); }
+/* Con SOSTEGNO il menu ha quattro voci: sui tablet (641-999 punti) Chi sono si nasconde, se no le voci vanno a capo */
+.menu-voce { white-space: nowrap; }
+@media (max-width: 999px) {
+  .menu { gap: 22px; }
+  .menu-voce-io { display: none; }
+}
+/* Nelle porte con cinque icone "5 app" va tutto intero sulla riga sotto, invece di spezzarsi */
+.porta-icone { flex-wrap: wrap; row-gap: 8px; }
+.porta-conta { white-space: nowrap; }
+@media (max-width: 640px) {
+  .fascia-sostegno { padding-bottom: 40px; }
+  .sostegno-invito { padding: 26px 22px; border-radius: 28px; }
+  .sostegno-invito h2 { font-size: 26px; }
+  .sostegno-invito p { font-size: 17px; }
+  .sostegno-invito .btn { flex: 1 1 100%; }
+  .scheda-voci { font-size: 16px; }
+  .libro-riquadro { padding: 26px 22px; }
+  .libro-riquadro h2 { font-size: 26px; }
+  .libro-riquadro p { font-size: 17px; }
+}

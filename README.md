@@ -1,7 +1,7 @@
 <!-- Copyright © 2026 Donato Cipriano. Tutti i diritti riservati. -->
 # Cipriano Didattica · il sito delle app
 
-Il sito che presenta le quattro app di Donato Cipriano per la scuola: **Leggo e Scrivo**, **Matematica Amica**, **Geografia Amica** e **Solfeggio e Teoria**.
+Il sito che presenta le app di Donato Cipriano per la scuola: **Leggo e Scrivo**, **Matematica Amica**, **Geografia Amica**, **Solfeggio e Teoria** e, in arrivo, **Tecnologia Amica**.
 
 Solo HTML e CSS, senza JavaScript e senza risorse esterne: niente cookie, niente statistiche, niente caratteri da altri siti.
 
@@ -10,8 +10,9 @@ Solo HTML e CSS, senza JavaScript e senza risorse esterne: niente cookie, niente
 | File | Che cos'è |
 |---|---|
 | `index.html` | la pagina principale |
+| `sostegno/` | le app per il sostegno alla scuola media: che cosa c'è in tutte, app per app, domande |
 | `elementari/`, `medie/`, `superiori/`, `conservatorio/` | una pagina per scuola, con le app divise per materia |
-| `leggo-e-scrivo/`, `matematica-amica/`, `geografia-amica/`, `solfeggio-e-teoria/` | una pagina per app: in breve, dove si usa, che cosa fa |
+| `leggo-e-scrivo/`, `matematica-amica/`, `geografia-amica/`, `solfeggio-e-teoria/`, `tecnologia-amica/` | una pagina per app: in breve, dove si usa, che cosa fa |
 | `privacy.html` | la privacy del sito, con i link al supporto e alla privacy di ogni app |
 | `sitemap.xml`, `robots.txt` | l'elenco delle pagine per i motori di ricerca |
 | `style.css` | lo stile (modello "Aula luminosa", tema chiaro) |
