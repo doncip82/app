@@ -1,9 +1,9 @@
 # Copyright © 2026 Donato Cipriano. Tutti i diritti riservati.
 # Il sito è aperto a tutti i motori di ricerca e agli assistenti con l'intelligenza artificiale.
-# Vale quando il sito avrà un dominio suo: i motori leggono robots.txt solo nella radice del dominio.
+# I motori leggono robots.txt solo nella radice del dominio: vale da quando il sito è su ciprianodidattica.it.
 User-agent: *
 Allow: /
 # le foto dei post di Instagram e Facebook (Instagram le vuole a un indirizzo pubblico): non sono pagine del sito
 Disallow: /social/
 
-Sitemap: https://doncip82.github.io/app/sitemap.xml
+Sitemap: https://ciprianodidattica.it/sitemap.xml
