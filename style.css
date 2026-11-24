@@ -375,6 +375,8 @@ p, ul { margin: 0; }
   .sottotitolo { font-size: 19px; }
   .icone-grandi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; margin-top: 12px; }
   .icone-grandi img { width: 120px; height: 120px; }
+  /* cinque icone in due colonne: l'ultima, da sola, sta al centro (dal 2026-11-24, Tecnologia Amica) */
+  .icone-grandi li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .titolo-sezione, .chi-sono-testo h2 { font-size: 36px; }
   .per-chi, .promesse, .novita { padding: 56px 0; }
   .app, .chi-sono { padding: 64px 0; }
@@ -474,6 +476,12 @@ p, ul { margin: 0; }
 @media (max-width: 999px) {
   .menu { gap: 22px; }
   .menu-voce-io { display: none; }
+}
+/* Cinque icone grandi nell'apertura (dal 2026-11-24): sui tablet un po' più piccole, così stanno su una riga */
+@media (min-width: 641px) and (max-width: 999px) {
+  .icone-grandi { gap: 16px; }
+  .icone-grandi img { width: 110px; height: 110px; }
+  .icone-grandi li { font-size: 14px; }
 }
 /* Nelle porte con cinque icone "5 app" va tutto intero sulla riga sotto, invece di spezzarsi */
 .porta-icone { flex-wrap: wrap; row-gap: 8px; }
